@@ -1,0 +1,105 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body{
+   background: #95c9c3 url(../img/grunge.png) repeat-x center 150px;
+    /* Margin bottom by footer height */
+
+}
+
+
+.footer {
+   position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
+    color: #FFFFFF;
+    padding-bottom: 60px;
+
+
+}
+
+/* GENERAL ------------------------------------------------------------*/
+.cf:after,
+.cf:before {
+    content: "";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    zoom: 1;
+}
+
+/* HEADER ----------------------------------------------------*/
+header {
+    background: url(../img/header.png);
+    min-height: 150px;
+}
+
+header #logo:hover {
+    opacity: 0.8;
+}
+
+header #logo img {
+    display: block;
+    margin: 20px auto;
+
+}
+
+/* PAGE CONTENT ----------------------------------------------------*/
+.page-content {
+    position: relative;
+    background: #FFFFFF;
+    color: #585246;
+    padding: 50px 30px 60px 30px;
+    box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.page-content .heading {
+    border-bottom: 5px solid #585246;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+}
+
+.page-content .c-1,
+.page-content .c-2,
+.page-content .c-3,
+.page-content .c-4 {
+    position: absolute;
+    width: 48px;
+    height: 50px;
+}
+
+.page-content .c-1 {
+    top: 0px;
+    left: 0px;
+    background: url(../img/corner-1.png) no-repeat top left;
+}
+
+.page-content .c-2 {
+    top: 0px;
+    right: 0px;
+    background: url(../img/corner-2.png) no-repeat top left;
+}
+
+.page-content .c-3 {
+    bottom: 0px;
+    left: 0px;
+    background: url(../img/corner-3.png) no-repeat top left;
+}
+
+.page-content .c-4 {
+    bottom: 0px;
+    right: 0px;
+    background: url(../img/corner-4.png) no-repeat top left;
+}
+
+/* FOOTER ----------------------------------------------------*/
