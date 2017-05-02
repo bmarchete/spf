@@ -20,6 +20,8 @@ Route::group(['prefix' => 'administrator', 'middleware' => 'auth'], function () 
     Route::get('/', 'Adm\IndexController@index')->name('adm-index');
     Route::get('/classificacoes/create', 'Adm\ClassificacaoController@create')->name('adm-classificacao-create');
     Route::post('/classificacoes', 'Adm\ClassificacaoController@store')->name('adm-classificacao-store');
+    
+    Route::post('/classificacoes/ajax', 'Adm\ClassificacaoController@storeAjax')->name('adm-classificacao-store-ajax');
 
     Route::get('/query/atividades', 'Adm\ClassificacaoController@queryByAtividades')->name('adm-atividades');
     Route::get('/query/equipes', 'Adm\ClassificacaoController@queryByEquipes')->name('adm-equipes');

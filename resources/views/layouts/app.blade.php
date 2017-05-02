@@ -69,6 +69,12 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
+                                    <li>
+                                        <a href="{{route('adm-classificacao-create')}}">Cadastrar</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('adm-atividades')}}">Consultar</a>
+                                    </li>
                                 </ul>
                             </li>
                         @endif
@@ -85,5 +91,7 @@
     <script>
         $('div.alert').not('.alert-important').delay(2000).slideUp(300);
     </script>
+
+    @yield('scripts')
 </body>
 </html>

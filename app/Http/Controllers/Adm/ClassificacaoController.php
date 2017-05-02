@@ -62,6 +62,42 @@ class ClassificacaoController extends Controller
         return redirect()->route('adm-index')->with('status', 'Classificação Salva com Sucesso!');
     }
 
+    public function storeAjax(Request $request)
+    {
+
+        
+        $input = $request->all();
+        $input['user'] = Auth::user()->id;
+       // return $input;
+
+        //não permite cadastrar duas vezes uma mesma posição para uma mesma atividade
+
+        if ($request->posicoes_posicao != -1) {
+            $testePosicao = Classificacao::
+                        where('posicoes_atividade_codigo', '=', $input['posicoes_atividade_codigo'])
+                        ->where('posicoes_posicao', '=', $input['posicoes_posicao'])->get();
+            
+            if (count($testePosicao)) {
+             return \Response::make('Esta configuração não é válida', 400);
+                
+                 return redirect()->back()->with('errors',"Esta configuração não é válida");
+            }
+        }
+
+        //----------
+             
+
+        try{
+             Classificacao::create($input);
+        }catch (\Exception $e)
+        {
+             return \Response::make('Essa opção não é valida', 400);
+            return redirect()->back()->with('errors',"Essa opção não é valida");
+        }
+        return \Response::make('Classificação Salva com Sucesso!', 200);
+        return redirect()->route('adm-index')->with('status', 'Classificação Salva com Sucesso!');
+    }
+
     public function queryByAtividades()
     {
         
