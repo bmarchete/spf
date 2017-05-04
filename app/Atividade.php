@@ -10,4 +10,9 @@ class Atividade extends Model
     {
         return $this->hasMany(Classificacao::class, 'posicoes_atividade_codigo', 'codigo');
     }
+
+    public function posicoes()
+    {
+        
+    }
 }

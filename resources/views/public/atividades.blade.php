@@ -14,6 +14,7 @@
                 <tr>
                     <th>Colocação</th>
                     <th>Equipe</th>
+                    <th>{{request('points') ? 'Pontos': ''}}</th>
                     <th>Cadastrado por:</th>
                 </tr>
             </thead>
@@ -27,6 +28,7 @@
                     </td>
 
                     <td>{{$item->equipe->tema}}</td>
+                    <td>{{request('points') ? $item->pontuacao: ''}}</td>
                     <td>{{$item->users->name}}</td>
                 </tr>
                 @endforeach

@@ -9,12 +9,7 @@
             <div class="col-md-12">
                 <div class="thumbnail">
                     <img src="{{url('assets')}}/img/equipes_2016/{{$equipe->foto}}" alt="{{ $equipe->tema }}">
-
-                 
                 </div>
-
-
-
             </div>
        
     </div>

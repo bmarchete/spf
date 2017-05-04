@@ -35,7 +35,15 @@ Route::group(['prefix' => 'administrator', 'middleware' => 'auth'], function () 
 Route::get('/', 'IndexController@index')->name('index');
 Route::get('/equipes', 'EquipeController@index')->name('equipes');
 
+Route::get('/palavras', 'IndexController@palavras')->name('palavras');
+Route::get('/sobre', 'IndexController@sobre')->name('sobre');
 
-Route::get('/atividades', 'IndexController@queryByAtividades')->name('site-atividades');
-Route::get('/equipes/{equipe}', 'IndexController@queryByEquipes')->name('site-equipes');
+
+Route::get('/atividades', 'IndexController@queryByAtividades')->name('');
+//Route::get('/equipes/{equipe}', 'IndexController@queryByEquipes')->name('site-equipes');
+
+Route::get('/placar', 'PontuacaoController@index')->name('site-atividades');
+Route::get('/equipes', 'PontuacaoController@porEquipe')->name('equipes');
+Route::get('/equipes/{id}', 'PontuacaoController@porEquipeId')->name('equipes-id');
+
 

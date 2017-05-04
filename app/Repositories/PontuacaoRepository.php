@@ -16,30 +16,34 @@ class PontuacaoRepository
 
     public static function pontuacaoEquipe($id)
     {
-       return DB::select(' select atividade.codigo as codigo, atividade.nome as nome,
-                posicoes.posicao as posicao, posicoes.pontuacao as pontuacao, equipe.codigo as equipe_codigo, equipe.tema as tema
-                from atividade
-                inner join posicoes
-                on atividade.codigo = posicoes.atividade_codigo
-                inner join classificacao
-                on posicoes.posicao = classificacao.posicoes_posicao and posicoes.atividade_codigo = classificacao.posicoes_atividade_codigo
-                inner join equipe
-                on equipe.codigo = classificacao.equipe_codigo
-                where equipe_codigo = ?', [$id]);
+       return DB::select(' select atividades.codigo as codigo, atividades.nome as nome,
+                            posicaos.posicao as posicao, posicaos.pontuacao as pontuacao, equipes.codigo as equipe_codigo, equipes.tema as tema
+                            from atividades
+                            inner join posicaos
+                            on atividades.codigo = posicaos.atividade_codigo
+                            inner join classificacaos
+                            on posicaos.posicao = classificacaos.posicoes_posicao and posicaos.atividade_codigo = classificacaos.posicoes_atividade_codigo
+                            inner join equipes
+                            on equipes.codigo = classificacaos.equipe_codigo
+                            where equipe_codigo = ?', [$id]);
     }
 
     public  static function pontuacaoGeral()
     {
         return DB::select('select atividades.codigo as codigo, atividades.nome as nome,
-                    posicaos.posicao as posicao, posicaos.pontuacao as pontuacao, equipes.codigo as equipe_codigo, equipes.tema as tema
-                    from atividades
-                    inner join posicaos
-                    on atividades.codigo = posicaos.atividade_codigo
-                    inner join classificacaos
-                    on posicaos.posicao = classificacaos.posicoes_posicao and posicaos.atividade_codigo = classificacaos.posicoes_atividade_codigo
-                    inner join equipes
-                    on equipes.codigo = classificacaos.equipe_codigo
-                    order by codigo desc');
+                            posicaos.posicao as posicao, posicaos.pontuacao as pontuacao, 
+                            equipes.codigo as equipe_codigo, equipes.tema as tema,
+                            users.name as adm 
+                            from atividades
+                            inner join posicaos
+                            on atividades.codigo = posicaos.atividade_codigo
+                            inner join classificacaos
+                            on posicaos.posicao = classificacaos.posicoes_posicao and posicaos.atividade_codigo = classificacaos.posicoes_atividade_codigo
+                            inner join equipes
+                            on equipes.codigo = classificacaos.equipe_codigo
+                            inner join users
+                            on users.id = classificacaos.user
+                            order by codigo desc');
     }
 
     public static function total()

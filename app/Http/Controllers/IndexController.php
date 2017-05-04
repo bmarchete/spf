@@ -9,6 +9,12 @@ use App\Atividade;
 
 class IndexController extends Controller
 {
+
+    public  function __construct()
+    {
+        $this->middleware('show.points');
+    }
+    
     public function index()
     {
         $equipes = Equipe::all();
@@ -19,19 +25,27 @@ class IndexController extends Controller
      public function queryByAtividades()
     {
         
-        
-        $atividades = Atividade::with(['classificacaos.users','classificacaos.equipe'])
+        return $atividades = Atividade::with(['classificacaos.users','classificacaos.equipe'])
                         ->get();
         return view('public.atividades', compact('atividades'));
-        
-        
 
     }
 
     public function queryByEquipes(Equipe $equipe)
     {
+        return 'ok';
         return view('public.equipe', compact('equipe'));
         
+    }
+
+    public function palavras()
+    {
+        return view('public.palavras');
+    }
+
+     public function sobre()
+    {
+        return view('public.sobre');
     }
 
 

@@ -22,7 +22,7 @@
     <div class="wrapper cf">
         <div id="logo">
             <a href="/">
-                <img src="{{ url("/assets/img") }}/spfcom.gif" class="img-responsive" width='230' height='90' alt=""/>
+                <img src="{{ url("/assets/img") }}/spfcom.png" class="img-responsive" width='230' height='90' alt=""/>
             </a>
 
         </div>
@@ -43,9 +43,9 @@
 
                 </div>
 
-                <div class="col-md-4"></div>
+                <div class="col-md-8" style="margin-left: 3%;">
 
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
 
 
@@ -66,9 +66,10 @@
                                     </a>
                                 </li>
 
+                              
                                 <li>
-                                    <a href="">
-                                        <div class="navegacao-adm">Equipes</div>
+                                    <a href="{{route('sobre')}}">
+                                        <div class="navegacao-adm">Sobre</div>
                                     </a>
                                 </li>
 
@@ -77,7 +78,7 @@
 
 
                 </div> <!-- /.navbar-collapse -->
-
+</div>
 
             </div><!-- /.container-fluid -->
 
@@ -97,7 +98,6 @@
 
             <div class="col-md-12">
                 <br>
-                {{-- @include('flash::message') --}}
 
                 @yield('content')
 
