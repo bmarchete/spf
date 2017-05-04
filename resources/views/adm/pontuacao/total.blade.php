@@ -3,6 +3,14 @@
 
 @section('content')
 
+@section('content') 
+ 
+ @if(!request('points'))
+
+ @include('adm.pontuacao.finalizado')
+
+@else
+
     <h2 class="heading" align="center">Pontuação final</h2>
 <div class="col-md-8 col-md-offset-2">
     <div class="panel panel-default">
@@ -33,5 +41,6 @@
 </div>
 
   
+@endif
 
 @endsection

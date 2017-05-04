@@ -47,3 +47,7 @@ Route::get('/equipes', 'PontuacaoController@porEquipe')->name('equipes');
 Route::get('/equipes/{id}', 'PontuacaoController@porEquipeId')->name('equipes-id');
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
