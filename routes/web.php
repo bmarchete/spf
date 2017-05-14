@@ -43,6 +43,7 @@ Route::get('/atividades', 'IndexController@queryByAtividades')->name('');
 //Route::get('/equipes/{equipe}', 'IndexController@queryByEquipes')->name('site-equipes');
 
 Route::get('/placar', 'PontuacaoController@index')->name('site-atividades');
+Route::get('/fim', 'PontuacaoController@total')->name('site-fim');
 Route::get('/equipes', 'PontuacaoController@porEquipe')->name('equipes');
 Route::get('/equipes/{id}', 'PontuacaoController@porEquipeId')->name('equipes-id');
 

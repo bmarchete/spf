@@ -42,7 +42,7 @@ class PontuacaoController extends Controller
         }
 
 
-            return view('public.site.pontuacao_equipe', compact('equipes'));
+            return view('public.pontuacao_equipe', compact('equipes'));
       
 
     }

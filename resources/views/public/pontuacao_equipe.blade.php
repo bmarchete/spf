@@ -13,7 +13,7 @@
 
 @section('content2')
     @foreach($equipes as $equipe)
-        @include('errors.list')
+        
         <div class=" row page-content" style="margin-top: 20px">
 
 
