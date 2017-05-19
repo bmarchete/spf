@@ -6,7 +6,7 @@
     @if(request('points'))
     <div class='col-md-12'>
         <h2 style='font-family: roboto;' align="center" class="heading">Já temos um vencedor!</h2>
-        <a href=""><img src="{{url('assets')}}/img/fim.jpg" class="img-responsive center-block" alt="fim" /></a>
+        <a href="/fim"><img src="{{url('assets')}}/img/fim.jpg" class="img-responsive center-block" alt="fim" /></a>
     </div>
     @endif
 
