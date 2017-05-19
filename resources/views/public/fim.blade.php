@@ -20,7 +20,7 @@
         @foreach($total as $pontuacao)
             <tr>
                 <td>{{$pontuacao->tema}}</td>
-                <td>{{$pontuacao->pontuacao}}</td>
+                <td>{{$pontuacao->pontuacao}} {{$pontuacao->tema == 'GhostFace'$pontuacao->tema == 'GhostFace'|| $pontuacao->tema == 'Annabelle' ? '(zerado)' :''}}</td>
                 <td><a class="btn btn-info" href="{{route('equipes-id', $pontuacao->equipe_codigo)}}">Detalhes</a></td>
 
             </tr>
